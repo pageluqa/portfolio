@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>~/portfolio- Dúo Monzón — Informática</title>
+<meta name="description" content="Proyecto de portfolio, hecho por un dúo de estudiantes de la secundaria n°14 de Don Orione. " />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="contenedor topbar-inner">
+    <a href="inicio" class="marca"><span class="marca-prompt">~$</span> <span id="equipo-nombre-marca">Dúo Monzón</span></a>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#equipo"><span class="nav-icono">📁</span>equipo.md</a></li>
+        <li><a href="#habilidades"><span class="nav-icono">📁</span>habilidades.json</a></li>
+        <li><a href="#galeria"><span class="nav-icono">📁</span>recorrido/</a></li>
+        <li><a href="#contacto"><span class="nav-icono">📁</span>contacto.sh</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="inicio" class="hero">
+    <div class="contenedor hero-inner">
+      <p class="hero-eyebrow">// portfolio hecho por el equipo de Luca y Lucio</p>
+      <h1 class="hero-titulo"><span class="hero-corchete">&lt;</span><span id="Dúo Monzón">Dúo Monzón</span><span class="hero-corchete">/&gt;</span></h1>
+      <p class="hero-escuela" id="equipo-escuela"></p>
+      <p class="hero-texto">Un registro compilado del proyecto portfolio.</p>
+      <a href="#galeria" class="btn btn-primario"> ver el recorrido.</a>
+    </div>
+  </section>
+
+  <section id="equipo" class="seccion">
+    <div class="contenedor">
+      <p class="seccion-eyebrow">// 01 — nosotros somos</p>
+      <h2 class="seccion-titulo">El equipo</h2>
+      <p class="equipo-resenia" id="equipo-resenia"></p>
+      <div class="miembros-wrap" id="miembros-wrap"></div>
+    </div>
+  </section>
+
+  <section id="habilidades" class="seccion seccion-alt">
+    <div class="contenedor">
+      <p class="seccion-eyebrow">// 02 — habilidades.json</p>
+      <h2 class="seccion-titulo">Habilidades</h2>
+      <div id="habilidades-wrap"></div>
+    </div>
+  </section>
+
+  <section id="galeria" class="seccion">
+    <div class="contenedor">
+      <p class="seccion-eyebrow">// 03 — recorrido/</p>
+      <h2 class="seccion-titulo">Nuestro recorrido</h2>
+
+      <div class="filtros">
+        <div class="filtros-persona" role="group" aria-label="Filtrar por integrante">
+          <button class="filtro-btn activo" data-filtro-persona="todos">Todos</button>
+          <button class="filtro-btn" data-filtro-persona="persona1">Luca</button>
+          <button class="filtro-btn" data-filtro-persona="persona2">Lucio</button>
+          <button class="filtro-btn" data-filtro-persona="ambos">Los dos</button>
+        </div>
+        <select id="filtro-categoria" class="filtro-select" aria-label="Filtrar por categoría">
+          <option value="todas">Todas las categorías</option>
+        </select>
+      </div>
+
+      <div class="galeria-grid" id="galeria-grid"></div>
+      <p id="galeria-vacio" class="galeria-vacio" hidden>No hay resultados para este filtro todavía.</p>
+    </div>
+  </section>
+
+  <section id="contacto" class="seccion seccion-alt">
+    <div class="contenedor">
+      <p class="seccion-eyebrow">// 04 — contacto.sh</p>
+      <h2 class="seccion-titulo">Contacto</h2>
+      <div class="contacto-wrap" id="contacto-wrap"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="contenedor">
+    <p>Hecho por <span id="equipo-nombre-footer">Luca y Lucio</span> · Portfolio de la escuela secundaria n°14</p>
+  </div>
+</footer>
+
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <button id="lightbox-cerrar" class="lightbox-cerrar" aria-label="Cerrar imagen">&times;</button>
+  <figure class="lightbox-figura">
+    <img id="lightbox-img" src="" alt="" />
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
