@@ -1,0 +1,288 @@
+/* ============================================================
+   COMPONENTE: DESTACADO "SISTEMA DE DIETA Y RUTINA"
+   ------------------------------------------------------------
+   Todas las clases empiezan con  pfd-  (portfolio-fitness-dieta)
+   para no chocar con los estilos de tu portfolio.
+
+   CÓMO CAMBIAR COLORES: mirá el bloque ":root" de abajo y los
+   bloques [data-tema="..."]. Cada color es una variable.
+   ============================================================ */
+
+/* ---------- 1. VARIABLES (tema por defecto: verde) ---------- */
+.pfd {
+  --pfd-fondo: linear-gradient(135deg, #0f3d2e 0%, #1f7a55 100%);
+  --pfd-texto: #ffffff;
+  --pfd-texto-suave: rgba(255, 255, 255, 0.82);
+  --pfd-acento: #ffd166;          /* botón y detalles */
+  --pfd-acento-texto: #1b2a1f;    /* texto sobre el botón */
+  --pfd-badge-fondo: rgba(255, 255, 255, 0.16);
+  --pfd-badge-texto: #ffffff;
+  --pfd-chip-fondo: rgba(255, 255, 255, 0.14);
+  --pfd-tarjeta: #ffffff;         /* mini tarjeta de ejemplo */
+  --pfd-tarjeta-texto: #23272f;
+  --pfd-tarjeta-suave: #667085;
+  --pfd-barra1: #2f9e6e;
+  --pfd-barra2: #2b6cb0;
+  --pfd-barra3: #f59e0b;
+  --pfd-radio: 20px;
+  --pfd-sombra: 0 24px 60px rgba(0, 0, 0, 0.28);
+  --pfd-fuente: inherit;
+  --pfd-fuente-titulo: inherit;
+}
+
+/* ---------- 2. TEMAS LISTOS PARA USAR ---------- */
+
+/* Tema para el portfolio "Bitácora de viaje" */
+.pfd[data-tema="bitacora"] {
+  --pfd-fondo: #1f2a44;
+  --pfd-acento: #d9a441;
+  --pfd-acento-texto: #1f2a44;
+  --pfd-badge-fondo: #b23a2e;
+  --pfd-badge-texto: #f3ecdd;
+  --pfd-tarjeta: #f3ecdd;
+  --pfd-tarjeta-texto: #1f2a44;
+  --pfd-tarjeta-suave: #4a5478;
+  --pfd-barra1: #b23a2e;
+  --pfd-barra2: #1f2a44;
+  --pfd-barra3: #d9a441;
+  --pfd-radio: 6px;
+  --pfd-sombra: 0 10px 0 rgba(31, 42, 68, 0.15);
+  --pfd-fuente: "Work Sans", sans-serif;
+  --pfd-fuente-titulo: "Space Mono", monospace;
+}
+
+/* Tema para el portfolio "Minimalista moderno" */
+.pfd[data-tema="minimalista"] {
+  --pfd-fondo: linear-gradient(135deg, #0a0a0a 0%, #1e293b 100%);
+  --pfd-acento: #2563eb;
+  --pfd-acento-texto: #ffffff;
+  --pfd-badge-fondo: rgba(37, 99, 235, 0.2);
+  --pfd-badge-texto: #93c5fd;
+  --pfd-barra1: #2563eb;
+  --pfd-barra2: #10b981;
+  --pfd-barra3: #f59e0b;
+  --pfd-radio: 16px;
+  --pfd-fuente: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --pfd-fuente-titulo: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---------- 3. ESTRUCTURA ---------- */
+.pfd,
+.pfd *,
+.pfd *::before,
+.pfd *::after { box-sizing: border-box; }
+
+.pfd {
+  padding: 56px 24px;
+  font-family: var(--pfd-fuente);
+  scroll-margin-top: 80px; /* para que el menú fijo no tape el título */
+}
+
+.pfd .pfd-inner {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 56px 48px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  background: var(--pfd-fondo);
+  color: var(--pfd-texto);
+  border-radius: var(--pfd-radio);
+  box-shadow: var(--pfd-sombra);
+  overflow: hidden;
+}
+
+/* Brillo decorativo de fondo */
+.pfd .pfd-inner::before {
+  content: "";
+  position: absolute;
+  width: 420px; height: 420px;
+  top: -160px; right: -120px;
+  background: radial-gradient(circle, var(--pfd-acento) 0%, transparent 65%);
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+/* ---------- 4. TEXTO ---------- */
+.pfd .pfd-texto { position: relative; z-index: 1; }
+
+.pfd .pfd-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin: 0 0 18px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--pfd-badge-fondo);
+  color: var(--pfd-badge-texto);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.pfd .pfd-punto {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--pfd-acento);
+  animation: pfd-pulso 1.8s ease-out infinite;
+}
+
+.pfd .pfd-titulo {
+  margin: 0 0 16px;
+  padding: 0;
+  text-align: left;
+  color: var(--pfd-texto);
+  font-family: var(--pfd-fuente-titulo);
+  font-size: clamp(2rem, 4.2vw, 3.1rem);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.pfd .pfd-desc {
+  margin: 0 0 22px;
+  max-width: 520px;
+  color: var(--pfd-texto-suave);
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+.pfd .pfd-chips {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin: 0 0 30px; padding: 0;
+  list-style: none;
+}
+.pfd .pfd-chips li {
+  margin: 0; padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--pfd-chip-fondo);
+  font-size: 0.9rem; font-weight: 600;
+}
+
+/* ---------- 5. BOTÓN ---------- */
+.pfd .pfd-boton {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 16px 32px;
+  border-radius: 999px;
+  background: var(--pfd-acento);
+  color: var(--pfd-acento-texto);
+  font-family: var(--pfd-fuente-titulo);
+  font-size: 1.1rem; font-weight: 800;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.pfd .pfd-boton:hover,
+.pfd .pfd-boton:focus-visible {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.38);
+}
+.pfd .pfd-boton:focus-visible { outline: 3px solid var(--pfd-texto); outline-offset: 4px; }
+.pfd .pfd-boton span { transition: transform 0.2s ease; }
+.pfd .pfd-boton:hover span { transform: translateX(5px); }
+
+/* Destello que cruza el botón */
+.pfd .pfd-boton::after {
+  content: "";
+  position: absolute; top: 0; left: -60%;
+  width: 40%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  animation: pfd-destello 3.6s ease-in-out infinite;
+}
+
+.pfd .pfd-nota {
+  margin: 16px 0 0;
+  font-size: 0.85rem;
+  color: var(--pfd-texto-suave);
+}
+
+/* ---------- 6. MINI TARJETA DE EJEMPLO (solo decorativa) ---------- */
+.pfd .pfd-visual {
+  position: relative; z-index: 1;
+  display: flex; justify-content: center;
+}
+.pfd .pfd-tarjeta {
+  width: 100%; max-width: 340px;
+  padding: 24px;
+  background: var(--pfd-tarjeta);
+  color: var(--pfd-tarjeta-texto);
+  border-radius: calc(var(--pfd-radio) - 4px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  transform: rotate(3deg);
+  animation: pfd-flotar 5s ease-in-out infinite;
+}
+.pfd .pfd-tarjeta-tag {
+  margin: 0 0 4px;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--pfd-tarjeta-suave);
+}
+.pfd .pfd-kcal {
+  margin: 0 0 18px;
+  font-family: var(--pfd-fuente-titulo);
+  font-size: 2.6rem; font-weight: 800; line-height: 1;
+}
+.pfd .pfd-kcal small { font-size: 1rem; font-weight: 600; color: var(--pfd-tarjeta-suave); }
+
+.pfd .pfd-macro { margin: 0 0 12px; font-size: 0.82rem; font-weight: 600; }
+.pfd .pfd-macro-fila { display: flex; justify-content: space-between; margin-bottom: 5px; }
+.pfd .pfd-barra {
+  height: 8px; border-radius: 999px;
+  background: rgba(127, 127, 127, 0.2);
+  overflow: hidden;
+}
+.pfd .pfd-barra i {
+  display: block; height: 100%;
+  width: var(--w, 50%);
+  border-radius: 999px;
+  background: var(--c, var(--pfd-barra1));
+}
+
+.pfd .pfd-tarjeta-pie {
+  display: flex; gap: 10px;
+  margin: 18px 0 0; padding: 14px 0 0;
+  border-top: 1px dashed rgba(127, 127, 127, 0.4);
+  font-size: 0.82rem; font-weight: 600;
+}
+.pfd .pfd-tarjeta-pie span { flex: 1; }
+
+/* ---------- 7. ANIMACIONES ---------- */
+@keyframes pfd-pulso {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55); }
+  100% { box-shadow: 0 0 0 12px rgba(255, 255, 255, 0); }
+}
+@keyframes pfd-destello {
+  0%, 55% { left: -60%; }
+  100%    { left: 130%; }
+}
+@keyframes pfd-flotar {
+  0%, 100% { transform: rotate(3deg) translateY(0); }
+  50%      { transform: rotate(3deg) translateY(-10px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pfd .pfd-punto, .pfd .pfd-boton::after, .pfd .pfd-tarjeta { animation: none; }
+  .pfd .pfd-boton, .pfd .pfd-boton span { transition: none; }
+}
+
+/* ---------- 8. DETALLES DEL TEMA "BITÁCORA" (estilo ticket) ---------- */
+.pfd[data-tema="bitacora"] .pfd-inner {
+  outline: 2px dashed rgba(217, 164, 65, 0.65);
+  outline-offset: -14px;
+}
+.pfd[data-tema="bitacora"] .pfd-badge {
+  border-radius: 4px;
+  transform: rotate(-2deg);
+  border: 2px solid #f3ecdd;
+}
+.pfd[data-tema="bitacora"] .pfd-boton { border-radius: 4px; border: 2px solid #f3ecdd; }
+.pfd[data-tema="bitacora"] .pfd-chips li { border-radius: 4px; border: 1px dashed rgba(243, 236, 221, 0.5); }
+.pfd[data-tema="bitacora"] .pfd-tarjeta { border: 2px solid #1f2a44; outline: 3px solid #d9a441; }
+
+/* ---------- 9. CELULAR / TABLET ---------- */
+@media (max-width: 820px) {
+  .pfd { padding: 36px 16px; }
+  .pfd .pfd-inner { grid-template-columns: 1fr; padding: 40px 24px; gap: 36px; }
+  .pfd .pfd-boton { width: 100%; justify-content: center; }
+  .pfd .pfd-tarjeta { max-width: 300px; }
+}

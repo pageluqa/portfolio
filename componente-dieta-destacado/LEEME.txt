@@ -1,0 +1,17 @@
+COMPONENTE "DESTACADO DIETA Y RUTINA"
+
+Archivos:
+  dieta-destacado.css   -> copiar a la carpeta css/ del portfolio
+  dieta-destacado.html  -> bloque para pegar en el index.html
+  ejemplos/             -> los dos portfolios ya con el componente integrado
+                           (abrí el index.html de cada uno para verlo funcionando)
+
+Pasos rápidos:
+  1. Copiá dieta-destacado.css dentro de css/
+  2. Copiá la carpeta sistema-dieta-rutina/ junto al index.html del portfolio
+  3. En el <head>, agregá:  <link rel="stylesheet" href="css/dieta-destacado.css">
+  4. Pegá el contenido de dieta-destacado.html en el index.html, justo después de la portada
+     (FUERA de la sección de proyectos)
+  5. En data-tema elegí: "bitacora", "minimalista" (o borrá el atributo para el tema verde)
+
+El tutorial completo con ejemplos para cambiar colores y diseño está en el documento aparte.

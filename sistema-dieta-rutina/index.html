@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Generador de Dieta y Rutina</title>
+<meta name="description" content="Sistema simple que genera una dieta, rutina y ejercicios sugeridos en base a tus datos, en tiempo real y sin necesidad de servidor." />
+<link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+
+<header class="encabezado">
+  <div class="contenedor">
+    <p class="marca">🥗 Generador de Dieta y Rutina</p>
+    <p class="subtitulo">Completá tus datos y generá tu plan al instante. Todo se calcula en tu propio navegador.</p>
+  </div>
+</header>
+
+<main class="contenedor principal">
+
+  <!-- ================= FORMULARIO ================= -->
+  <section class="tarjeta" aria-labelledby="titulo-formulario">
+    <h2 id="titulo-formulario">Tus datos</h2>
+    <p class="ayuda">Ningún dato se envía a ningún servidor: todo el cálculo pasa acá mismo, en tu navegador.</p>
+
+    <form id="formulario-datos">
+
+      <div class="grilla-campos">
+
+        <div class="campo">
+          <label for="franja-etaria">Franja etaria</label>
+          <select id="franja-etaria" required>
+            <option value="" disabled selected>Elegí una opción</option>
+            <option value="menor18">Menos de 18 años</option>
+            <option value="18-25">18 a 25 años</option>
+            <option value="26-35">26 a 35 años</option>
+            <option value="36-45">36 a 45 años</option>
+            <option value="46-60">46 a 60 años</option>
+            <option value="mas60">Más de 60 años</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="sexo">Sexo biológico</label>
+          <select id="sexo" required>
+            <option value="" disabled selected>Elegí una opción</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="prefiero-no-decir">Prefiero no decirlo</option>
+          </select>
+          <p class="nota-campo">Se usa solo para estimar el metabolismo basal (ver README).</p>
+        </div>
+
+        <div class="campo">
+          <label for="peso">Peso actual (kg)</label>
+          <input type="number" id="peso" min="25" max="300" step="0.1" placeholder="Ej: 68" required />
+        </div>
+
+        <div class="campo">
+          <label for="altura">Altura (cm)</label>
+          <input type="number" id="altura" min="100" max="230" step="1" placeholder="Ej: 170" required />
+        </div>
+
+        <div class="campo">
+          <label for="horas-sueno">Horas de sueño por noche</label>
+          <input type="number" id="horas-sueno" min="0" max="14" step="0.5" placeholder="Ej: 7" required />
+        </div>
+
+        <div class="campo">
+          <label for="horas-estudio">Horas de estudio o trabajo por día</label>
+          <input type="number" id="horas-estudio" min="0" max="16" step="0.5" placeholder="Ej: 6" required />
+        </div>
+
+        <div class="campo">
+          <label for="actividad-fisica">Nivel de actividad física actual</label>
+          <select id="actividad-fisica" required>
+            <option value="" disabled selected>Elegí una opción</option>
+            <option value="sedentario">Sedentario (poco o nada de ejercicio)</option>
+            <option value="ligera">Ligera (1 a 2 veces por semana)</option>
+            <option value="moderada">Moderada (3 a 4 veces por semana)</option>
+            <option value="intensa">Intensa (5 a 6 veces por semana)</option>
+            <option value="muy-intensa">Muy intensa (todos los días / entrenamiento fuerte)</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="tipo-dieta">Tipo de alimentación actual</label>
+          <select id="tipo-dieta" required>
+            <option value="" disabled selected>Elegí una opción</option>
+            <option value="omnivora">Como de todo</option>
+            <option value="vegetariana">Vegetariana</option>
+            <option value="vegana">Vegana</option>
+            <option value="sin-gluten">Sin gluten (celíaco/a o intolerancia)</option>
+            <option value="sin-lactosa">Sin lactosa</option>
+          </select>
+        </div>
+
+      </div>
+
+      <fieldset class="campo campo-checkboxes">
+        <legend>Enfermedades hereditarias o de la familia a tener en cuenta</legend>
+        <p class="nota-campo">Marcá todas las que correspondan. Esto no reemplaza una consulta médica.</p>
+        <div class="opciones-checkbox">
+          <label><input type="checkbox" name="enfermedad" value="diabetes" /> Diabetes</label>
+          <label><input type="checkbox" name="enfermedad" value="hipertension" /> Hipertensión / presión alta</label>
+          <label><input type="checkbox" name="enfermedad" value="colesterol" /> Colesterol alto</label>
+          <label><input type="checkbox" name="enfermedad" value="cardiaca" /> Problemas cardíacos</label>
+          <label><input type="checkbox" name="enfermedad" value="celiaquia" /> Celiaquía</label>
+          <label><input type="checkbox" name="enfermedad" value="ninguna" /> Ninguna de estas</label>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="boton-generar">Generar mi plan ⚡</button>
+      <p id="mensaje-error" class="mensaje-error" hidden></p>
+    </form>
+  </section>
+
+  <!-- ================= RESULTADOS ================= -->
+  <section id="resultado" class="resultado" hidden aria-live="polite">
+
+    <div class="tarjeta tarjeta-resumen">
+      <h2>Tu resumen</h2>
+      <div class="grilla-resumen" id="grilla-resumen"></div>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🍽️ Dieta sugerida</h2>
+      <div id="bloque-dieta"></div>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🏋️ Rutina y ejercicios sugeridos</h2>
+      <div id="bloque-rutina"></div>
+    </div>
+
+    <div class="tarjeta">
+      <h2>😴 Sueño</h2>
+      <div id="bloque-sueno"></div>
+    </div>
+
+    <div class="tarjeta" id="tarjeta-salud" hidden>
+      <h2>🩺 Notas por antecedentes de salud</h2>
+      <div id="bloque-salud"></div>
+    </div>
+
+    <div class="aviso-medico">
+      <strong>Importante:</strong> este plan es una guía general generada por reglas simples, no un
+      diagnóstico ni un plan médico o nutricional profesional. Ante cualquier condición de salud,
+      enfermedad hereditaria, o antes de empezar una rutina nueva, consultá con un médico, nutricionista
+      o profesor de educación física.
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <p>Sistema generador de dieta y rutina · Proyecto escolar · Todo se calcula en tu navegador, sin servidor ni base de datos.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

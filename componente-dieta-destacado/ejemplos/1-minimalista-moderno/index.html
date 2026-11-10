@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Portfolio - Equipo Informático</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dieta-destacado.css">
+</head>
+<body>
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">PORTFOLIO</div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyecto-dieta">Dieta</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Estudiantes de Informática</h1>
+            <p>Explora nuestro viaje académico y las experiencias compartidas</p>
+            <a href="#equipo" class="btn-primary">Conoce el Equipo</a>
+        </div>
+    </section>
+
+    <!-- ===== DESTACADO: SISTEMA DE DIETA Y RUTINA ===== -->
+<div class="pfd" id="proyecto-dieta" data-tema="minimalista" aria-labelledby="pfd-titulo">
+  <div class="pfd-inner">
+
+    <!-- Columna de texto -->
+    <div class="pfd-texto">
+      <p class="pfd-badge"><span class="pfd-punto"></span> Proyecto estrella del año</p>
+
+      <h2 class="pfd-titulo" id="pfd-titulo">Generador de Dieta y Rutina</h2>
+
+      <p class="pfd-desc">
+        Ingresá tus datos y obtené en segundos una dieta sugerida, una rutina
+        de ejercicios y recomendaciones de sueño. Sin registro y sin descargas.
+      </p>
+
+      <ul class="pfd-chips">
+        <li>🥗 Dieta</li>
+        <li>🏋️ Rutina</li>
+        <li>😴 Sueño</li>
+      </ul>
+
+      <a class="pfd-boton" href="sistema-dieta-rutina/index.html">
+        Probar el sistema <span aria-hidden="true">→</span>
+      </a>
+      <p class="pfd-nota">100% en tu navegador · No se guarda ningún dato</p>
+    </div>
+
+    <!-- Mini tarjeta de ejemplo (decorativa) -->
+    <div class="pfd-visual" aria-hidden="true">
+      <div class="pfd-tarjeta">
+        <p class="pfd-tarjeta-tag">Ejemplo de resultado</p>
+        <p class="pfd-kcal">2.150 <small>kcal / día</small></p>
+
+        <div class="pfd-macro">
+          <div class="pfd-macro-fila"><span>Proteínas</span><span>25%</span></div>
+          <div class="pfd-barra"><i style="--w:25%; --c:var(--pfd-barra1)"></i></div>
+        </div>
+        <div class="pfd-macro">
+          <div class="pfd-macro-fila"><span>Carbohidratos</span><span>45%</span></div>
+          <div class="pfd-barra"><i style="--w:45%; --c:var(--pfd-barra2)"></i></div>
+        </div>
+        <div class="pfd-macro">
+          <div class="pfd-macro-fila"><span>Grasas</span><span>30%</span></div>
+          <div class="pfd-barra"><i style="--w:30%; --c:var(--pfd-barra3)"></i></div>
+        </div>
+
+        <div class="pfd-tarjeta-pie">
+          <span>🏋️ 4 días/sem</span>
+          <span>😴 8 h de sueño</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <!-- SECCIÓN EQUIPO -->
+    <section id="equipo" class="team-section">
+        <h2>Nuestro Equipo</h2>
+        <p class="section-subtitle">Conoce a quiénes somos y qué nos apasiona</p>
+        
+        <div class="team-description">
+            <p>Somos dos estudiantes de informática unidos por la pasión por la tecnología y el aprendizaje. A lo largo de estos años hemos compartido innumerables experiencias en charlas, visitas técnicas y proyectos colaborativos que nos han permitido crecer como profesionales y como personas.</p>
+        </div>
+
+        <div class="team-members">
+            <div class="member-card">
+                <img src="images/team/person1.jpg" alt="Persona 1" class="member-img">
+                <h3>Persona 1</h3>
+                <p class="role">Especialista en Desarrollo</p>
+                <p class="bio">Apasionado por Python y desarrollo web. Interesado en soluciones tecnológicas innovadoras.</p>
+                <div class="social-links">
+                    <a href="#" target="_blank">LinkedIn</a>
+                    <a href="#" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="images/team/person2.jpg" alt="Persona 2" class="member-img">
+                <h3>Persona 2</h3>
+                <p class="role">Especialista en Análisis</p>
+                <p class="bio">Experto en análisis de datos e inteligencia artificial. Amante de los desafíos técnicos.</p>
+                <div class="social-links">
+                    <a href="#" target="_blank">LinkedIn</a>
+                    <a href="#" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PROYECTOS -->
+    <section id="proyectos" class="projects-section">
+        <h2>Nuestras Experiencias</h2>
+        <p class="section-subtitle">Charlas, visitas técnicas y proyectos realizados</p>
+
+        <!-- FILTROS -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="person1">Persona 1</button>
+            <button class="filter-btn" data-filter="person2">Persona 2</button>
+            <button class="filter-btn" data-filter="ambos">Ambos</button>
+            <select id="category-filter" class="category-select">
+                <option value="">Filtrar por Categoría...</option>
+                <option value="charla">Charla</option>
+                <option value="visita">Visita Técnica</option>
+                <option value="proyecto">Proyecto</option>
+                <option value="evento">Evento</option>
+            </select>
+        </div>
+
+        <!-- GRID DE PROYECTOS -->
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Los proyectos se cargan aquí desde data.json -->
+        </div>
+    </section>
+
+    <!-- SECCIÓN HABILIDADES -->
+    <section id="habilidades" class="skills-section">
+        <h2>Habilidades Técnicas</h2>
+        <p class="section-subtitle">Tecnologías que hemos aprendido y dominamos</p>
+
+        <div class="skills-container" id="skillsContainer">
+            <!-- Las habilidades se cargan aquí desde data.json -->
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contacto" class="contact-section">
+        <h2>Ponte en Contacto</h2>
+        <p class="section-subtitle">¿Quieres saber más sobre nosotros?</p>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Persona 1</h3>
+                <p>📧 Email: <a href="mailto:person1@email.com">person1@email.com</a></p>
+                <p>📱 Teléfono: +34 123 456 789</p>
+                <div class="social-contact">
+                    <a href="#" target="_blank">LinkedIn</a>
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Instagram</a>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h3>Persona 2</h3>
+                <p>📧 Email: <a href="mailto:person2@email.com">person2@email.com</a></p>
+                <p>📱 Teléfono: +34 987 654 321</p>
+                <div class="social-contact">
+                    <a href="#" target="_blank">LinkedIn</a>
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2024 Nuestro Portfolio. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- MODAL PARA VER PROYECTOS EN DETALLE -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImg" src="" alt="">
+            <div id="modalInfo">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+                <p id="modalParticipants"></p>
+                <p id="modalDate"></p>
+                <p id="modalCategory"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data-loader.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+</html>

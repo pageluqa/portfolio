@@ -1,0 +1,118 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Charla sobre Inteligencia Artificial",
+      "description": "Charla técnica impartida por profesional de la industria de IA. Se cubrieron temas de machine learning, redes neuronales y aplicaciones prácticas.",
+      "category": "Charla",
+      "participants": "Persona 1",
+      "date": "15/03/2024",
+      "image": "images/projects/project1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Visita Técnica a Empresa de Software",
+      "description": "Conocimos las instalaciones de una empresa líder en desarrollo de software. Vimos el proceso de desarrollo, pruebas y despliegue de aplicaciones.",
+      "category": "Visita Técnica",
+      "participants": "Ambos",
+      "date": "22/04/2024",
+      "image": "images/projects/project2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Proyecto: Sistema de Gestión en Python",
+      "description": "Desarrollo de un sistema de gestión de inventario usando Python. Implementamos base de datos, interfaz gráfica y reportes.",
+      "category": "Proyecto",
+      "participants": "Persona 1",
+      "date": "10/05/2024",
+      "image": "images/projects/project3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Hackathon de Programación Web",
+      "description": "Participación en hackathon de 24 horas. Nuestro equipo desarrolló una aplicación web con tecnologías modernas en tiempo récord.",
+      "category": "Evento",
+      "participants": "Ambos",
+      "date": "18/06/2024",
+      "image": "images/projects/project4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Charla: Seguridad Informática",
+      "description": "Presentación sobre buenas prácticas en seguridad informática, encriptación y protección de datos.",
+      "category": "Charla",
+      "participants": "Persona 2",
+      "date": "25/06/2024",
+      "image": "images/projects/project5.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Desarrollo Frontend con JavaScript",
+      "description": "Proyecto de aplicación web interactiva usando HTML, CSS y JavaScript vanilla. Implementamos componentes dinámicos y animaciones.",
+      "category": "Proyecto",
+      "participants": "Persona 1",
+      "date": "12/07/2024",
+      "image": "images/projects/project6.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Visita a Centro de Datos",
+      "description": "Visita técnica a un centro de datos de infraestructura cloud. Conocimos sobre servidores, refrigeración, seguridad y redundancia.",
+      "category": "Visita Técnica",
+      "participants": "Persona 2",
+      "date": "08/08/2024",
+      "image": "images/projects/project7.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Análisis de Datos con IA",
+      "description": "Proyecto de análisis de datos usando machine learning. Procesamos datasets, entrenamos modelos y generamos predicciones.",
+      "category": "Proyecto",
+      "participants": "Ambos",
+      "date": "20/08/2024",
+      "image": "images/projects/project8.jpg"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "description": "Lenguaje de programación versátil",
+      "level": 5
+    },
+    {
+      "name": "HTML/CSS",
+      "description": "Desarrollo web frontend",
+      "level": 4
+    },
+    {
+      "name": "JavaScript",
+      "description": "Programación interactiva en web",
+      "level": 4
+    },
+    {
+      "name": "Visual Basic",
+      "description": "Programación en VB.NET",
+      "level": 3
+    },
+    {
+      "name": "IA y Machine Learning",
+      "description": "Algoritmos de aprendizaje automático",
+      "level": 4
+    },
+    {
+      "name": "SQL",
+      "description": "Gestión de bases de datos",
+      "level": 4
+    },
+    {
+      "name": "Git y Control de Versiones",
+      "description": "Versionado de código",
+      "level": 4
+    },
+    {
+      "name": "Linux",
+      "description": "Sistema operativo y terminal",
+      "level": 3
+    }
+  ]
+}
